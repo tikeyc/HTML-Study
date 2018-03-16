@@ -1,0 +1,109 @@
+
+body {
+  padding-bottom: 200px;
+}
+
+.float-div {
+  border: 1px solid red;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.float-img {
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin-right: 30px;
+}
+.float-text {
+  line-height: 2;
+  word-spacing: 0.1rem;
+}
+.float-text::first-letter {
+  font-size: 3em;
+  border: 1px solid black;
+  background: red;
+  float: left;
+  padding: 2px;
+  margin-right: 4px;
+}
+
+.floatbox {
+  border: 3px solid red;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  text-align: center;
+  float: left;
+  box-shadow: 2px 2px 5px rgb(199, 46, 50);
+}
+
+
+/* 设置元素对齐方式 */
+.align1 {
+  border: 3px solid red;
+  width: 50%;
+  /* 元素水平居中 */
+  margin: auto;
+  /* 文本对齐方式 */
+  text-align: center;
+}
+.align-img {
+  width: 200px;
+  height: 200px;
+  /* 图片(非块元素)居中需要设置 display: block*/
+  display: block;
+  margin: auto;
+}
+
+.align-contaier {
+  position: relative;
+}
+.align-right {
+  border: 3px solid red;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  line-height: 100px;
+  background-color: rgba(255, 110, 10, 0.2);
+  box-shadow: 2px 2px 10px red;
+}
+
+/* align-right元素的p元素适用该CSS设置 */
+.align-right p {
+  background-color: yellow;
+  text-align: center;
+  line-height: 1;
+  display: inline-block;
+}
+/*
+opacity设置透明度或者使用rgba()设置
+box-shadow: x y z color设置阴影;z表示阴影虚化效果
+*/
+.opacity-img {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  top: 120px;
+  opacity: 0.6;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.trasition-div {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  background-color: lightblue;
+  /* 过渡时间 ease ease-in ease-out ease-in-out ease-out-in缓慢程度*/
+  transition: 1s ease-in-out;
+  /* 变化属性 变化时间 延迟时间 */
+  transition: width 4s 1s, height 2s 2s;
+}
+
+/* hover鼠标移到触发 */
+.trasition-div:hover {
+  width: 1000px;
+  height: 600px;
+}

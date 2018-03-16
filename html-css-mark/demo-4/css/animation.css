@@ -1,0 +1,68 @@
+.animation-div1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  /*
+  关键帧标识
+  动画时间
+  延迟动画时间
+  缓慢程度
+  动画执行次数(infinite:无线循环)
+  alternate:来回动画 ;reverse:动画顺序反转 变成了从to到from;
+  */
+  animation: keyframes-identifier1 2s 1s ease-in-out 3 alternate;
+}
+
+.animation-div2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  top: 20px;
+  /*
+  关键帧标识
+  动画时间
+  延迟动画时间
+  缓慢程度
+  动画执行次数(infinite:无线循环)
+  alternate:来回动画 ;reverse:动画顺序反转 变成了从to到from;
+  */
+  animation: keyframes-identifier2 3s 1s ease-in-out infinite alternate;
+}
+
+/* 动画关键帧 */
+@keyframes keyframes-identifier1 {
+  from {
+    background-color: green;
+    left: 0;
+    top: 0;
+  }
+  to {
+    background-color: blue;
+    left: 600px;
+    top: 400px;
+  }
+}
+@keyframes keyframes-identifier2 {
+  0% {
+    left: 0;
+    top: 20px;
+  }
+  25% {
+    left: 50%;
+    top: 20px;
+  }
+  50% {
+    left: 50%;
+    top: 300px;
+  }
+  75% {
+    left: 0;
+    top: 300px;
+  }
+  100% {
+    left: 0;
+    top: 20px;
+  }
+}

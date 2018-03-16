@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+
+		<title>03 tikeyc hello02</title>
+
+		<link rel="stylesheet" type="text/css" href="hello02.css">
+
+		
+		<script type="text/javascript" src="hello02.js"></script>
+		<script type="text/javascript" src="hello02_1.js"></script>
+		<script type="text/javascript" src="hello02_2.js"></script>
+
+		<script type="text/javascript" src="jquery-3.2.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+		  		$("p").click(function(){
+		  			$(this).hide();
+		  		});
+			});
+		</script>
+
+
+		<script type="text/javascript" language="javascript"> 
+			function init(){
+				var button = document.getElementById('toclick'); 
+				button.onclick = function(){
+					alert('button is clicked'); 
+				}
+			} 
+		</script>
+
+		<script type="text/javascript" src="hello02_3.js"></script>
+
+	</head>
+
+	<body onload="init()">
+
+		<ul id="nav">
+			<li class="item1"><a href="">Item 1</a></li>
+			<li class="item2"><a href="">Item 2</a></li>
+			<li class="item3"><a href="">Item 3</a></li>
+			<li class="item4"><a href="">Item 4</a></li>
+		</ul>
+
+
+		<p>点我,我就消失</p>
+
+
+		<label for="clickButton">请点击</label>
+		<input id="toclick" type="button" value="Click me" />
+
+
+       	
+
+	</body>
+
+<html>

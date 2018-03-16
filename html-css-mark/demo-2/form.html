@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- 在手机显示的设置：手机屏幕的宽度，初始显示1.0倍正常大小 -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"/>
+    <title>数据表单</title>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- 标题图标 https://static.bootcss.com/www/assets/ico/favicon.png?1520735277928-->
+    <link rel="shortcut icon" href="./icon.jpg">
+
+    <link rel="stylesheet" href="./style.css"/>
+  </head>
+  <body>
+
+    <!-- form表单 class:css制定属性；action:下面button元素（input元素type=submit）点击后进入的界面 method：以什么方式发送，默认get -->
+    <form class="" action="index.html" method="post">
+      <!-- label说明元素 for对应input的id,设置后点击label的用户名光标也会出现在input上-->
+      <label for="username">用户名</label>
+      <input id="username" type="text" name="user_name" placeholder="用户名" value=""/>
+      <!-- br换行 -->
+      <br>
+      <label for="pass_word">密码</label>
+      <input id="pass_word" type="password" name="pass_word" placeholder="密码" value=""/>
+
+      <br>
+      <input type="radio" name="sex" value=""/>男
+      <input type="radio" name="sex" value=""/>女
+
+      <br>
+      <input type="checkbox" name="color" value=""/>红
+      <input type="checkbox" name="color" value=""/>黄
+      <input type="checkbox" name="color" value=""/>蓝
+
+      <br>
+      <select>
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <!-- selected默认选中 -->
+        <option selected value="3">广州</option>
+        <option value="4">深圳</option>
+      </select>
+
+      <br>
+      <!-- type设置为button后不会响应action -->
+      <input type="submit" name="" value="提交"/>
+      <!-- 点击button把form表单提交到action制定的界面 -->
+      <button>button</button>
+      <!-- 重置表单输入的用户名和密码 -->
+      <input type="reset" name="" value="重置"/>
+    </form>
+
+  </body>
+</html>

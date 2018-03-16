@@ -1,0 +1,199 @@
+/* CSS常用属性 */
+div {
+  color: red;
+  background-color: yellow;
+}
+
+/* 颜色名、RGB、十六进制*/
+.color1 {
+  color: red;
+}
+.color2 {
+  color: rgb(255,0,0);
+}
+.color3 {
+  color: #FF0000;
+}
+#color4 {
+  color: black;
+}
+
+.body1 {
+  height: 1200px;
+  /* 颜色背景 */
+  background-color: gray;
+  /* 图片背景 */
+  background: url(../backimg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* 控制网页滚动时背景图片固定的方式，是跟随滚动还是固定 */
+  background-attachment:local;
+}
+/* body1中的属性可以一次写入body2中的background */
+.body2 {
+  height: 1200px;
+  background: gray url(../backimg1.jpg) no-repeat local;
+}
+
+/* 边线设置 */
+#border1 {
+  /* border-width: 1px;
+  border-style: solid;
+  border-color: blue; */
+  border: 1px solid orange;
+  /* 边线颜色：上 右 下 左 */
+  border-color: red green blue orange;
+
+  border-radius: 5px;
+}
+
+.border2 {
+  background-color: #eee;
+  border-left: 1px solid blue;
+}
+
+/* 内部间距设置 */
+.padding1 {
+  border: 1px solid orange;
+  margin-top: 10px;
+  /* 内部间距:上 右 下 左 */
+  /* padding: 20px 10px 5px 10px; */
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+/* 外部间距设置 */
+.margin1 {
+  border: 1px solid orange;
+  margin-top: 20px;
+}
+
+/* 设置元素的宽高 */
+.widthheight {
+  background: lightblue;
+  margin-top: 20px;
+  height: 100px;
+  width: 200px;
+}
+
+/* 元素的外边框设置 有别于border，在border之外的部分 */
+.outline1 {
+  margin-top: 40px;
+  border: 3px solid black;
+  outline: 10px solid red;
+}
+
+/* 文本内容的样式设置 */
+.textStyle {
+  margin-top: 20px;
+  background-color: yellow;
+
+  /* 文本颜色 */
+  color: red;
+  /* 靠左 靠右 居中 */
+  text-align: center;
+  /* 文本内容两端对齐：微小的变化 */
+  /* text-align: justify; */
+  /* 设置文本内容的中线 上线 下划线 */
+  text-decoration: underline;
+  /* 大写转换小写（lowercase） uppercase capitalize*/
+  text-transform: uppercase;
+  /* 设置文本内容的缩行 */
+  text-indent: 50px;
+  /* 设置文本内容的字符间隔 */
+  letter-spacing: 5px;
+  /* 设置单词之间的间隔 */
+  word-spacing: 100px;
+  /* 设置行间距 */
+  line-height: 1.5;
+  /* 设置字体 font-size大小默认16px*/
+  font-size: 20px;
+  /* 1em相当于16px,可以尽量去适应不同的浏览器 */
+  font-size: 1.5em;
+  font-family: fantasy;
+  /* 斜体 */
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* 控制元素的显示状态 */
+.display1 {
+  background-color: lightblue;
+  /* none:隐藏  block:块元素显示  inline：行内元素显示  inline-block：行内加块显示*/
+  display:inline-block;
+}
+
+.display2 {
+  background-color: lightblue;
+  /* none:隐藏  block:块元素显示  inline：行内元素显示  inline-block：行内加块显示*/
+  display: block;
+  /* hidden隐藏还会占据空间 */
+  visibility: hidden;
+}
+
+/* 设置元素的最大的宽高 */
+.maxWidthHeight {
+  margin-top: 20px;
+  max-width:600px;
+  max-height: 400px;
+}
+
+/* 设置元素的位置 */
+.position1 {
+  background-color: lightyellow;
+  width: 300px;
+  height: 200px;
+  /*
+  static: 浏览器渲染默认的位置,设置top padding margin无效
+  relative: 可以设置top padding margin等控制元素位置时的参考物是原来的位置
+  absolute: 控制元素位置时的参考物是其父级元素的位置
+  fixed: 控制元素位置时的参考物是屏幕的位置,而且屏幕滚动时元素固定不动
+  */
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+}
+
+/* 设置元素的堆放层次 */
+.z-index1 {
+  position: relative;
+  top: 50px;
+  width: 400px;
+}
+.z-index-h1 {
+  position: relative;
+  top: 100px;
+  z-index: 2;
+}
+.z-index-img {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+.z-index-p {
+  position: relative;
+  bottom: 100px;
+  z-index: 0;
+}
+
+/* 设置控制元素内容的溢出情况 */
+.overflow1 {
+  /*
+  hidden :溢出部分隐藏
+  visible :溢出部分显示
+  scroll :溢出部分滚动可以显示
+  auto :自动适应
+  */
+  overflow:scroll;
+  overflow-x: auto;
+  overflow-y: auto;
+  position: relative;
+  top: 50px;
+  width: 200px;
+  height: 50px;
+}

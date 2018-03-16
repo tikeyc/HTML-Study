@@ -1,0 +1,76 @@
+/* 优先级：ID选择器 > 类选择器 > 元素选择器*/
+/* 简单选择器: */
+/* 元素选择器 */
+p {
+  background-color: yellow;
+}
+
+/* 类选择器 */
+.class-p {
+  background-color: red;
+}
+
+/* ID选择器 */
+#id-p {
+  background-color: lightblue;
+}
+
+/*
+后代选择器: 空格
+div1内的所有后代p元素（包括孙子，所有后代元素）
+*/
+.div1 p {
+  background-color: gray;
+}
+/*
+子代选择器: >
+div1的所有子元素p（不包括孙子）
+*/
+.div1 > p {
+  background-color: red;
+}
+/*
+相邻兄弟选择器: +
+div1下边的第一个元素
+*/
+.div1 + p {
+  background-color: rgb(57, 205, 117);
+}
+/*
+一般兄弟选择器: ~
+与div2同一级别的p元素
+*/
+.div2 ~ p {
+  background-color: rgb(57, 205, 117);
+}
+
+/* 伪类选择器:控制元素的某个状态 */
+.div3 {
+  border: 1px solid red;
+}
+.div3 p {
+  display: none;
+}
+.div3:hover {
+  background-color: gray;
+}
+/* 鼠标放到div显示后代p元素 */
+.div3:hover p {
+  display: block;
+}
+
+.div4 p:first-child {
+  background-color: red;
+}
+
+/* 伪元素选择器 ：元素的某一个部分*/
+.div5 p::first-line {
+  color: red;
+}
+.div5 p:nth-of-type(2)::first-letter {
+  background-color: blue;
+}
+.div5 span::before {
+  content: "New";
+  color: red;
+}

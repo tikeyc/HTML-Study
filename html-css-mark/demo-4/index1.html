@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>如何使用CSS</title>
+  <link rel="shortcut icon" href="./icon.jpg">
+
+  <style media="screen">
+    /* 设置元素的浮动 */
+
+    .float1 {
+      float: right;
+      border: 1px solid red;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+    }
+
+    .float2 {
+      /* float: left; */
+      border: 1px solid blue;
+      height: 100px;
+      /* 清楚上一个元素的浮动设置 */
+      clear: both;
+    }
+
+    .div3 {
+      border: 1px solid blue;
+      margin: 10px;
+      overflow: auto;
+    }
+
+    .div4 {
+      border: 1px solid red;
+      width: 100px;
+      height: 50px;
+      float: right;
+
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+  <div class="float1">
+    设置元素的浮动1
+  </div>
+  <div class="float2">
+    设置元素的浮动2
+  </div>
+
+  <div class="div3">
+    设置元素的浮动3
+    <div class="div4">
+      设置元素的浮动4
+    </div>
+  </div>
+
+  <div class="div3 clearfix">
+    设置元素的浮动3
+    <div class="div4">
+      设置元素的浮动4
+    </div>
+  </div>
+
+  <div class="float-div">
+    <img class="float-img" src="./icon.jpg" alt="">
+    <p class="float-text">
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+      浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,浮动,
+    </p>
+  </div>
+
+  <div class="floatbox">
+    box1
+  </div>
+  <div class="floatbox">
+    box2
+  </div>
+  <div class="floatbox">
+    box3
+  </div>
+  <div class="floatbox">
+    box4
+  </div>
+  <div class="floatbox">
+    box5
+  </div>
+  <div class="" style="clear:left;border:1px solid red;margin:10px;">
+    清除上一个浮动设置，使该元素不在继续浮动在上一元素的右边。
+  </div>
+
+  <div class="align1">
+    设置元素对齐方式1
+  </div>
+  <img class="align-img" src="./icon.jpg" alt="">
+
+  <div class="align-contaier">
+    <div class="align-right">
+      <p>该显示文本垂直方向居中</p>
+    </div>
+  </div>
+
+  <img class="opacity-img" src="./icon.jpg" alt="">
+
+  <div class="trasition-div">
+
+  </div>
+
+</body>
+
+</html>
