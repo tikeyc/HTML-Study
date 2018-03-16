@@ -1,3 +1,6 @@
+h3 {
+  border: 2px solid black;
+}
 /* 优先级：ID选择器 > 类选择器 > 元素选择器*/
 /* 简单选择器: */
 /* 元素选择器 */
@@ -38,7 +41,7 @@ div1下边的第一个元素
 }
 /*
 一般兄弟选择器: ~
-与div2同一级别的p元素
+与div2同一级别的下面的p元素
 */
 .div2 ~ p {
   background-color: rgb(57, 205, 117);
@@ -73,4 +76,42 @@ div1下边的第一个元素
 .div5 span::before {
   content: "New";
   color: red;
+}
+
+/*属性选择器
+ [attribute]有attribute属性
+ [attribute="value"]等于
+ [attribute~="value"]包含空格隔开的单词,
+ [attribute*="value"]包含value
+ [attribute|="value"]以value单词开头
+ [attribute^="value"]以value开始
+ [attribute$="value"]以value结尾
+ */
+
+.div6 p[title] {
+  background-color: red;
+}
+/* =:属性等于top-p */
+.div6 p[title="top-p"] {
+  background-color: lightblue;
+}
+/* ~=:包含p (必须是空格隔开的单词) */
+.div6 p[title~="p"] {
+  background-color: lightblue;
+}
+/* *=:包含p2 */
+.div6 p[title*="p2"] {
+  background-color: gray;
+}
+/* |=:以gap单词开头 */
+.div6 p[title|="gap"] {
+  background-color: gray;
+}
+/* ^=:以value开始 */
+.div6 p[title^="value"] {
+  background-color: lightblue;
+}
+/* $=:以value结尾 */
+.div6 p[title$="value"] {
+  background-color: yellow;
 }
