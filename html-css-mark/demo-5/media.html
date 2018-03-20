@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <title>媒体查询</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style media="screen">
+      body {
+        background-color: gray;
+      }
+      /* 不同的尺寸下显示不同的样式
+      query: 查询语句
+      @media query {
+
+      }
+      */
+      @media only screen and (max-width: 400px) {
+        body {
+          background-color: green;
+        }
+      }
+      @media only screen and (min-width:401px) and (max-width: 600px) {
+        body {
+          background-color: red;
+        }
+      }
+      /* 设置横屏显示颜色 */
+      @media only screen and (orientation: landscape) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+
+
+
+  </body>
+</html>

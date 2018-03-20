@@ -1,0 +1,93 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 左边 */
+.left-div {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  position: fixed;
+}
+
+.left-div-img {
+  background: url(https://picsum.photos/500/900?image=1005);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100%;
+}
+
+/******* 右边 *******/
+.right-div {
+  margin-left: 40%;
+}
+/* 右边头部 */
+.right-head-div {
+  padding: 200px 16px;
+  text-align: center;
+}
+.title {
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+.subTitle {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #666;
+}
+.read-my-blog {
+  text-decoration: none;
+  border: none;
+  background-color: #eee;
+  color: #000;
+  padding: 12px 34px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.read-my-blog:hover {
+  box-shadow: 0 4px 10px rgb(203, 192, 192);
+}
+/* 右边中部 */
+.right-photos-div {
+  padding: 24px 16px;
+}
+.img {
+  width: 100%;
+  height: auto;
+  padding: 8px;
+}
+/* 右边底部 */
+.right-about-me-div {
+  padding: 24px;
+}
+.right-about-me-div h3 {
+  color: #666;
+}
+.right-about-me-div hr {
+  border: none;
+  border-bottom: 1px solid #eee;
+  margin: 16px 0;
+}
+.right-about-me-div p {
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 2;
+  /* 缩进 */
+  text-indent: 30px;
+}
+
+/*  */
+@media only screen and (max-width: 768px) {
+  .left-div {
+    display: none;
+  }
+  .right-div {
+    margin-left: 0;
+  }
+}
