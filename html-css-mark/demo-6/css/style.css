@@ -56,10 +56,14 @@
 .right-photos-div {
   padding: 24px 16px;
 }
-.img {
+img {
   width: 100%;
   height: auto;
   padding: 8px;
+  transform-origin: center;
+}
+img:hover {
+  box-shadow: 0px 4px 10px rgb(203, 192, 192);
 }
 /* 右边底部 */
 .right-about-me-div {
@@ -90,4 +94,24 @@
   .right-div {
     margin-left: 0;
   }
+}
+
+/* animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    font-size: 100px;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    font-size: 48px;
+  }
+}
+
+.right-head-div h1 {
+  animation-name: rotate;
+  animation-duration: 1.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
 }
