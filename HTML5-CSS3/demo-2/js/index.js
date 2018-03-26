@@ -22,16 +22,12 @@ window.onload = function(){
     }
   }
 
-  var navModalLiPhoto = document.getElementById("navModalLiPhoto");
-  navModalLiPhoto.onclick = function () {
-    navModal.style.display = "none";
-  }
-
   var ul = document.getElementById("ul");
-  // console.log(ul.children);
-  for (var li in ul.children) {
-    console.log(li);
-    li.onclick = function () {
+  var as = ul.getElementsByTagName("a");
+  for (var i = 0; i < as.length; i++) {
+    var a = as[i];
+    // console.log(a);
+    a.onclick = function () {
       navModal.style.display = "none";
     }
   }
