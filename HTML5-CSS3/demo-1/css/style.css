@@ -1,0 +1,115 @@
+html {
+  font-family: "Raleway",sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+* {
+  -webkit-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/*  */
+.header {
+  padding: 126px 0;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.header h2, h1 {
+  letter-spacing: 5px;
+  font-weight: 400;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+
+.nav li {
+  display: inline-block;
+  float: left;
+}
+
+.nav li:hover {
+  background-color: #eee;
+}
+
+.nav li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+.nav li a.active {
+  background-color: #eee;
+}
+
+/*  */
+.main {
+  padding: 0 8px;
+  filter: grayscale(0.7);
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 8px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  /* border-radius: 10px; */
+  /* border-related properties */
+  border: 20px solid black;
+  background-clip: padding-box;
+  border-image-source: url(https://mdn.mozillademos.org/files/13060/border-image.png);
+  border-image-slice: 40;
+  border-image-repeat: round;
+}
+img:hover {
+  box-shadow: 5px 5px 10px gray;
+}
+
+.main::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*  */
+.footer {
+  padding: 64px 0;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin-top: 120px;
+}
+
+.footer a {
+  color: #333;
+}
+/* 鼠标移上去显示的状态 */
+.footer a:hover {
+  color: lightblue;
+}
+/* 鼠标点击显示的状态 */
+.footer a:active {
+  color: red;
+}
+
+/*  */
+@media only screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
