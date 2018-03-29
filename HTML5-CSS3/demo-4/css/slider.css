@@ -1,0 +1,91 @@
+.slider-box {
+  padding: 0 5%;
+  position: relative;
+}
+.slider {
+  position: relative;
+}
+.slider-box .slider:nth-child(1) {
+  display: block;
+}
+.slider-box .slider:nth-child(2) {
+  display: none;
+}
+.slider-box .slider:nth-child(3) {
+  display: none;
+}
+.slider-box img {
+  width: 100%;
+  height: auto;
+}
+.slider .tag {
+  background-color: #eee;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+.slider .left-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 24px;
+  padding-left: 16px;
+}
+.slider .middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.slider .right-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 24px;
+  padding-right: 16px;
+}
+.tool-bar {
+  background-color: #444;
+  font-size: 20px;
+  color: white;
+  padding: 5px 8px;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
+.tool-bar .dots {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 3px;
+  cursor: pointer;
+}
+.tool-bar .active, .dots:hover {
+  background-color: white;
+}
+.tool-bar .center-align {
+  text-align: center;
+}
+.tool-bar .right-align {
+  text-align: right;
+}
+.tool-bar .page-btn {
+  cursor: pointer;
+}
+
+.animation-bottom {
+  animation-name: animationBottom;
+  animation-duration: 2s;
+}
+
+@keyframes animationBottom {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}

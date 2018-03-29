@@ -1,0 +1,22 @@
+#about {
+  padding: 0 5%;
+}
+#about .card-box {
+  margin: 10px 10px;
+  border: 1px solid rgb(203, 196, 196);
+  box-shadow: 4px 4px 10px gray;
+}
+
+#about img {
+  width: 100%;
+  height: auto;
+}
+#about .card-content {
+  padding: 10px;
+}
+#about .button {
+  background-color: rgb(244, 244, 244);
+  border: none;
+  width: 100%;
+  height: 30px;
+}

@@ -1,0 +1,55 @@
+#price {
+  padding: 0 5%;
+}
+#price .card-box {
+  margin: 10px 10px;
+  border: 1px solid rgb(203, 196, 196);
+}
+#price .card-box:hover {
+  box-shadow: 4px 4px 10px gray;
+}
+#price .card-box ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+#price .card-box ul li {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.2);
+  background-color: white;
+}
+
+#price .card-box ul li:first-child {
+  margin-top: -20px;
+  min-height: 64px;
+  max-height: 64px;
+  line-height: 64px;
+  color: white;
+  background-color: rgb(62, 59, 59);
+}
+
+#price .card-box ul li:last-child {
+  max-height: 50px;
+  line-height: 50px;
+  color: white;
+  background-color: rgb(244, 244, 244);
+  border-bottom: none;
+}
+
+#price .footer button{
+  background-color: rgb(104, 207, 230);
+  color: white;
+  border: none;
+  font-size: 14px;
+  width: 60px;
+  height: 30px;
+}

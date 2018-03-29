@@ -1,3 +1,7 @@
+body {
+  /* 鼠标样式 */
+  cursor: url("");
+}
 /* 竖着的导航 */
 .nav-ul-vertical {
   /* 去掉点 */

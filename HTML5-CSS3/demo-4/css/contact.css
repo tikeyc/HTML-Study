@@ -1,0 +1,39 @@
+#contact form * {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+}
+#contact form input:focus {
+  box-shadow: 1px 0 8px red;
+}
+#contact form input[id="content"]{
+  height: 200px;
+}
+#contact form .button {
+  float: right;
+  width: 60px;
+  height: 30px;
+  margin-right: 5%;
+  background-color: black;
+  color: white;
+}
+
+#contact textarea {
+  -webkit-appearance: textarea;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  flex-direction: column;
+  resize: none;
+  cursor: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-width: 1px;
+  border-style: solid;
+  border-color: initial;
+  border-image: initial;
+  padding: 2px;
+}
+
+#contact textarea:focus {
+  box-shadow: 1px 0 8px red;
+}
