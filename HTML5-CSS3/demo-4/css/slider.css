@@ -4,14 +4,18 @@
 }
 .slider {
   position: relative;
+  animation-name: sliderAnimation;
+  animation-duration: 2s;
 }
-.slider-box .slider:nth-child(1) {
-  display: block;
+@keyframes sliderAnimation {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.slider-box .slider:nth-child(2) {
-  display: none;
-}
-.slider-box .slider:nth-child(3) {
+.slider-box .slider:nth-child(n+2) {
   display: none;
 }
 .slider-box img {
@@ -74,6 +78,9 @@
 }
 .tool-bar .page-btn {
   cursor: pointer;
+}
+.tool-bar .page-btn:active {
+  opacity: 0.5;
 }
 
 .animation-bottom {

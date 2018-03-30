@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <!-- style -->
+    <style media="screen">
+      .relative-contaner {
+        position: relative;
+      }
+      #contaner {
+        width: 600px;
+        height: 300px;
+        background-color: #444;
+        color: #fff;
+      }
+      /* top */
+      .top-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .top-middle {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%,0);
+      }
+      .top-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      /* middle */
+      .middle-left {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0,-50%);
+      }
+      .middle-middle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .middle-right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0%,-50%);
+      }
+      /*  */
+      .bottom-left {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      .bottom-middle {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%,0);
+      }
+      .bottom-right {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contaner" class="relative-contaner">
+      <!-- top -->
+      <div class="top-left">top-left</div>
+      <div class="top-middle">top-middle</div>
+      <div class="top-right">top-right</div>
+      <!-- middle -->
+      <div class="middle-left">middle-left</div>
+      <div class="middle-middle">middle-middle</div>
+      <div class="middle-right">middle-right</div>
+      <!-- bottom -->
+      <div class="bottom-left">bottom-left</div>
+      <div class="bottom-middle">bottom-middle</div>
+      <div class="bottom-right">bottom-right</div>
+    </div>
+    <br>
+    <div id="contaner" class="relative-contaner">
+      <img src="https://unsplash.it/600/300?image=978" alt="">
+      <!-- top -->
+      <div class="top-left">top-left</div>
+      <div class="top-middle">top-middle</div>
+      <div class="top-right">top-right</div>
+      <!-- middle -->
+      <div class="middle-left">middle-left</div>
+      <div class="middle-middle">middle-middle</div>
+      <div class="middle-right">middle-right</div>
+      <!-- bottom -->
+      <div class="bottom-left">bottom-left</div>
+      <div class="bottom-middle">bottom-middle</div>
+      <div class="bottom-right">bottom-right</div>
+    </div>
+  </body>
+</html>

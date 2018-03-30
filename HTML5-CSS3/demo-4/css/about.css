@@ -4,7 +4,7 @@
 #about .card-box {
   margin: 10px 10px;
   border: 1px solid rgb(203, 196, 196);
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: 4px 4px 40px gray;
 }
 
 #about img {

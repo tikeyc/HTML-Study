@@ -49,9 +49,10 @@ html {
   text-align: center;
 }
 .bottom-bar {
-  margin: 20px auto;
-  width: 150px;
-  border-bottom: 5px solid gray;
+  padding: 16px 0;
+  margin: 64px auto;
+  display: inline-block;
+  border-bottom: 8px solid gray;
 }
 /* 轮播图片 */
 .title-h1 {

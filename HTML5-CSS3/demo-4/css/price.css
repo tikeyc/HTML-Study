@@ -6,7 +6,7 @@
   border: 1px solid rgb(203, 196, 196);
 }
 #price .card-box:hover {
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: 4px 4px 40px gray;
 }
 #price .card-box ul {
   list-style-type: none;
