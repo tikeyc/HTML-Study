@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <style media="screen">
+      .pointer {
+        opacity: 0.6;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #333;
+      }
+      .bar {
+        text-align: right;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      .close-btn {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .close-btn:hover {
+        color: #ccc;
+      }
+      .modal-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      .modal-inner img {
+        width: 100%;
+        height: auto;
+      }
+      /*  */
+      .animation-zoom {
+        -webkit-animation: animationzoom 0.4s linear;
+        animation: animationzoom 0.4s;
+        animation-timing-function: linear;
+      }
+      @-webkit-keyframes animationzoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      @keyframes animationzoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+    <!--  -->
+    <script type="text/javascript">
+      function openModal() {
+        var modal = document.getElementsByClassName('modal');
+        modal[0].style.display = 'block';
+      }
+      function closeModal() {
+        var modal = document.getElementsByClassName('modal');
+        modal[0].style.display = 'none';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <img class="pointer" onclick="openModal();" src="https://unsplash.it/400/400?image=1059" width="400" height="300" alt="">
+      <div class="modal">
+        <div class="modal-dialog">
+          <div class="bar">
+            <button class="close-btn" onclick="closeModal();">x</button>
+          </div>
+          <div class="modal-inner animation-zoom">
+            <img src="https://unsplash.it/900/500?image=1059" width="900" height="500" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

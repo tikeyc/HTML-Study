@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <style media="screen">
+      .container {
+        margin: 10px 16px;
+      }
+      .open-btn {
+        background-color: #444;
+        border: none;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+      }
+      /*  */
+      .modal {
+        display: none;
+        background-color: rgba(0,0,0,0.3);
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+        overflow: auto;
+      }
+      .modal-dialog {
+        margin: 32px 0;
+      }
+      .modal-content {
+        background-color: #fff;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 16px;
+        border-radius: 5px;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.3),0 4px 30px rgba(0,0,0,0.35);
+        /* -webkit-animation: animationzoomout 0.4s linear;
+        animation: animationzoomout 0.4s linear; */
+      }
+      .modal img {
+        width: 100%;
+        height: auto;
+      }
+      .modal-heading::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .modal-title {
+        display: inline-block;
+      }
+      .close-btn {
+        background-color: transparent;
+        border: none;
+        color: #444;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: right;
+        float: right;
+      }
+      .close-btn:hover {
+        color: #ccc;
+      }
+      /*  */
+      .modal-footer {
+        text-align: right;
+      }
+      .okbtn, .closebtn {
+        background-color: transparent;
+        border: none;
+        color: red;
+      }
+      /*  */
+      .animation-zoom-out {
+        -webkit-animation: animationzoomout 0.4s linear;
+        animation: animationzoomout 0.4s linear;
+      }
+      @-webkit-keyframes animationzoomout {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      @keyframes animationzoomout {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      .animation-zoom-in {
+        -webkit-animation: animationzoomin 0.4s linear;
+        animation: animationzoomin 0.4s;
+        animation-timing-function: linear;
+      }
+      @-webkit-keyframes animationzoomin {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0);
+        }
+      }
+      @keyframes animationzoomin {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(0);
+          display: none;
+        }
+      }
+    </style>
+
+    <script type="text/javascript">
+    function openModal() {
+      var modelDialog = document.getElementById('modal-dialog');
+      modelDialog.className = modelDialog.className.replace(' animation-zoom-in',' animation-zoom-out');
+
+      var modal = document.getElementsByClassName('modal');
+      modal[0].style.display = 'block';
+    }
+    function closeModal() {
+      var modelDialog = document.getElementById('modal-dialog');
+      // modelDialog.className = modelDialog.className + ' animation-zoom-in';
+      modelDialog.className = modelDialog.className.replace(' animation-zoom-out',' animation-zoom-in');
+
+      setTimeout(function () {
+        var modal = document.getElementsByClassName('modal');
+        modal[0].style.display = 'none';
+      },400);
+    }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <button class="open-btn" onclick="openModal();" type="button" name="button">open modal</button>
+      <!--  -->
+      <div class="modal">
+        <div id="modal-dialog" class="modal-dialog animation-zoom-out">
+          <div class="modal-content">
+            <div class="modal-heading">
+              <h2 class="modal-title">Modal title</h2>
+              <button class="close-btn" onclick="closeModal();">x</button>
+            </div>
+            <div class="modal-inner">
+              <p>
+                SFADFASDFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFAS
+                DFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFF
+                HAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFFHAJSFHKJ
+                ASHDKfsjkahdfkjahsdkfsdfsdf
+                SFADFASDFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFAS
+                DFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFF
+                HAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFFHAJSFHKJ
+                ASHDKfsjkahdfkjahsdkfsdfsdf
+              </p>
+              <img src="https://unsplash.it/900/500?image=1067" width="900" height="500" alt="">
+              <p>
+                SFADFASDFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFAS
+                DFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFF
+                HAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFFHAJSFHKJ
+                ASHDKfsjkahdfkjahsdkfsdfsdf
+                SFADFASDFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFAS
+                DFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFF
+                HAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFFHAJSFHKJ
+                ASHDKfsjkahdfkjahsdkfsdfsdf
+                SFADFASDFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFAS
+                DFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFF
+                HAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFFHAJSFHKJ
+                ASHDKfsjkahdfkjahsdkfsdfsdf
+                SFADFASDFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFAS
+                DFJKHSFFHAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFF
+                HAJSFHKJASHDKfsjkahdfkjahsdkfsdfsdfSFADFASDFJKHSFFHAJSFHKJ
+                ASHDKfsjkahdfkjahsdkfsdfsdf
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="closebtn" onclick="closeModal();" type="button" name="button">CLOSE</button>
+              <button class="okbtn" onclick="closeModal();" type="button" name="button">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

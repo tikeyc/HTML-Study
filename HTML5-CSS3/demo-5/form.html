@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="./js/form.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container shadow-2">
+      <!-- form表单 class:css制定属性；action:下面button元素（input元素type=submit）点击后进入的界面 method：以什么方式发送，默认get -->
+      <form class="" action="modal2.html" method="post">
+        <div class="form-group-label">
+          <label class="floating-label" for="name">姓名</label>
+          <input class="form-control" id="name" type="text" name="name" value="">
+        </div>
+
+        <div class="form-group-label">
+          <label class="floating-label" for="email">邮件</label>
+          <input class="form-control" id="email" type="text" name="email" value="">
+        </div>
+
+        <div class="form-group-label">
+          <label class="floating-label" for="city">城市</label>
+          <select class="form-control" name="city">
+            <option value=""></option>
+            <option value="">北京</option>
+            <option value="">上海</option>
+            <option value="">广州</option>
+            <option value="">深圳</option>
+          </select>
+        </div>
+
+        <div class="form-group-label">
+          <label class="floating-label" for="city">内容</label>
+          <textarea class="form-control" name="name" rows="1" cols="80"></textarea>
+        </div>
+
+        <div class="bar">
+          <!-- type设置为button后不会响应action -->
+          <button type="submit" name="button">提交</button>
+        </div>
+
+      </form>
+    </div>
+  </body>
+</html>

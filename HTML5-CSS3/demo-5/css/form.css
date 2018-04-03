@@ -1,0 +1,95 @@
+* *::after, a::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.shadow-2 {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 16px;
+}
+
+.form-control {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #eee;
+  height: 36px;
+  line-height: 20px;
+  outline: 0;
+  padding: 8px 0 7px;
+  border-radius: 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.floating-label {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.form-group-label {
+  position: relative;
+  margin: 20px 0;
+}
+/* 去掉上下三角图标 */
+select.form-control {
+  -webkit-appearance:none;
+}
+
+textarea.form-control {
+  height: 150px;
+  resize: none;
+}
+
+.bar {
+  text-align: right;
+}
+
+.bar button {
+  border: none;
+  background-color: transparent;
+  padding: 8px 16px;
+  color: #ed6589;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.bar button:hover {
+  background-color: #f1f1f1;
+}
+
+.control-focus .floating-label {
+  transform: scale(0.85,0.85) translateY(-32px);
+  color: #ed6589;
+}
+
+.control-focus .form-control {
+  border-bottom: 2px solid #ed6589;
+}
+
+.control-heiglight .floating-label {
+  transform: scale(0.85,0.85) translateY(-32px);
+  color: #666;
+}
+.control-heiglight .form-control {
+  border-bottom: 1px solid #eee;
+}
+
+.form-control:focus {
+  /* border-bottom: 2px solid #ed6589; */
+}
