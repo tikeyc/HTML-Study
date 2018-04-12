@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" charset="utf-8"></script>
+    <script src="./js/base.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- nav -->
+    <nav class="top">
+      <ul class="nav nav-h black">
+        <li> <a href="#" class="text-lightgray large hover-lightgray"> <i class="fa fa-home margin-right"></i> Logo</a> </li>
+        <li class="hide-small"> <a href="#" class="text-lightgray large hover-lightgray"> <i class="fa fa-firefox"></i></a> </li>
+        <li class="hide-small"> <a href="#" class="text-lightgray large hover-lightgray"> <i class="fa fa-envelope"></i></a> </li>
+        <li class="hide-small"> <a href="#" class="text-lightgray large hover-lightgray"> <i class="fa fa-user"></i></a> </li>
+        <li class="dropdown hide-small">
+          <a href="#" class="text-lightgray large hover-lightgray"> <i class="fa fa-bell"></i>
+            <sup class="sup red">3</sup>
+          </a>
+          <div class="dropdown-content">
+            <a href="#">3个好友请求</a>
+            <a href="#">有人赞了你的文章</a>
+            <a href="#">有新的留言</a>
+          </div>
+        </li>
+        <li class="right hide-small">
+          <a href="#" class="text-lightgray large hover-lightgray">
+            <img class="circle" src="./live_icon.jpg" alt="" width="25" height="25">
+          </a>
+        </li>
+        <!-- 三杠 menu -->
+        <li class="right hide-medium hide-large">
+          <a href="#" data-toggle='menu' class="text-lightgray large hover-black">
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- menu -->
+      <ul data-target='menu' class="nav black mobile hide-medium hide-large" style="display:none">
+        <li class=""> <a href="#" class="text-lightgray hover-lightgray"><i class="fa fa-firefox"></i></a> </li>
+        <li class=""> <a href="#" class="text-lightgray hover-lightgray"><i class="fa fa-envelope"></i></a> </li>
+        <li class=""> <a href="#" class="text-lightgray hover-lightgray"><i class="fa fa-user"></i></a> </li>
+        <li class="dropdown" style="width:100%">
+          <a href="#" class="text-lightgray large hover-lightgray"> <i class="fa fa-bell"></i>
+            <sup class="sup red">3</sup>
+          </a>
+          <div class="dropdown-content">
+            <a href="#">3个好友请求</a>
+            <a href="#">有人赞了你的文章</a>
+            <a href="#">有新的留言</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- main content -->
+    <div class="margin-tb-96">
+      <div class="row-padding">
+        <!-- col1 -->
+        <div class="col l3 s12">
+          <!--  -->
+          <div class="shadow container padding-tb round margin-bottom">
+            <p class="center">我的主页</p>
+            <div class="center">
+              <img class="circle hover-shadow-small" src="../icon.jpg" alt="" width="110" height="110">
+            </div>
+            <hr>
+            <ul class="list">
+              <li> <i class="fa fa-pencil text-red"></i> iOS, Android, 前端</li>
+              <li> <i class="fa fa-calendar text-red"></i> China, Gungzhou</li>
+              <li> <i class="fa fa-birthday-cake text-red"></i> Nov,2018</li>
+            </ul>
+          </div>
+          <!-- list -->
+          <div class="shadow lightred container padding-tb round margin-bottom">
+            <ul class="list">
+              <li class="hover-red"> <i class="fa fa-pencil "></i> iOS, Android, 前端</li>
+              <li class="hover-red"> <i class="fa fa-calendar "></i> China, Gungzhou</li>
+              <li class="hover-red"> <i class="fa fa-birthday-cake "></i> Nov,2018</li>
+            </ul>
+          </div>
+          <!-- tag -->
+          <div class="shadow container padding-tb round margin-bottom">
+            <span class="tag lightblue">tikeyc</span>
+            <span class="tag lightyellow">标签</span>
+            <span class="tag lightgreen">iOS</span>
+            <span class="tag lightgray">Android</span>
+            <span class="tag lightgreen">JAVA</span>
+            <span class="tag lightred">Python</span>
+            <span class="tag lightblue">tikeyc</span>
+            <span class="tag lightyellow">标签</span>
+            <span class="tag lightgreen">iOS</span>
+            <span class="tag lightgray">Android</span>
+            <span class="tag lightgreen">JAVA</span>
+            <span class="tag lightred">Python</span>
+          </div>
+          <!-- msg -->
+          <div class="shadow relative-contaner lightyellow container padding-tb round margin-bottom">
+            <button class="btn top-right" onclick="this.parentNode.style.display = 'none'">x</button>
+            <h4>Hey</h4>
+            <p class="small">个性源于仔细，运气来自实力！</p>
+          </div>
+          <!--  -->
+          <div class="shadow container padding-tb round margin-bottom">
+          </div>
+        </div>
+
+        <script id="content" type="text/html">
+          <div class="shadow container padding-tb round margin-bottom">
+            <div class="container">
+              <img class="circle left margin-right  hover-shadow-small" src="../icon.jpg" alt="" width="60" height="60">
+              <span class="right text-grey"> 1min</span>
+              <h3>tikeyc</h3>
+              <br>
+              <hr class="clear">
+              <p>发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，</p>
+              <div class="row-padding">
+                <div class="col l6 s12 margin-bottom">
+                  <img class="img hover-shadow-large" src="https://picsum.photos/300/200?image=110" width="300" height="200" alt="photo">
+                </div>
+                <div class="col l6 s12 margin-bottom">
+                  <img class="img hover-shadow-large" src="https://picsum.photos/300/200?image=116" width="300" height="200" alt="photo">
+                </div>
+              </div>
+              <div class="container">
+                <button class="button red"> <i class="fa fa-thumbs-up margin-right"></i>喜欢</button>
+                <button class="button black"> <i class="fa fa-comment margin-right"></i>留言</button>
+              </div>
+            </div>
+          </div>
+        </script>
+
+        <!-- col2 -->
+        <div id="col" class="col l7 s12">
+          <div id="form" class="shadow container padding-tb round margin-bottom">
+            <form class="" action="#" method="post">
+              <div class="form-group-label">
+                <label class="floating-label" for="input_content">发布的动态：</label>
+                <input class="form-control" id="input_content" type="text" name="name" value="">
+              </div>
+              <button class="button lightred right" type="button" onclick="sendButtonClick();"> <i class="fa fa-pencil margin-right"></i> 发送</button>
+            </form>
+          </div>
+          <!-- 动态1 -->
+          <div id="content1" class="shadow container padding-tb round margin-bottom">
+            <div class="container">
+              <img class="circle left margin-right  hover-shadow-small" src="../icon.jpg" alt="" width="60" height="60">
+              <span class="right text-grey"> 1min</span>
+              <h3>tikeyc</h3>
+              <br>
+              <hr class="clear">
+              <p>发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，</p>
+              <div class="row-padding">
+                <div class="col l6 s12 margin-bottom">
+                  <img class="img hover-shadow-large" src="https://picsum.photos/300/200?image=110" width="300" height="200" alt="photo">
+                </div>
+                <div class="col l6 s12 margin-bottom">
+                  <img class="img hover-shadow-large" src="https://picsum.photos/300/200?image=116" width="300" height="200" alt="photo">
+                </div>
+              </div>
+              <div class="container">
+                <button class="button red"> <i class="fa fa-thumbs-up margin-right"></i>喜欢</button>
+                <button class="button black"> <i class="fa fa-comment margin-right"></i>留言</button>
+              </div>
+            </div>
+          </div>
+          <!-- 动态2 -->
+          <div class="shadow container padding-tb round margin-bottom">
+            <div class="container">
+              <img class="circle left margin-right hover-shadow-small" src="./beauty.jpg" alt="" width="60" height="60">
+              <span class="right text-grey"> 1min</span>
+              <h3>tikeyc</h3>
+              <br>
+              <hr class="clear">
+              <p>发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，</p>
+            </div>
+            <div class="container">
+              <button class="button red"> <i class="fa fa-thumbs-up margin-right"></i>喜欢</button>
+              <button class="button black"> <i class="fa fa-comment margin-right"></i>留言</button>
+            </div>
+          </div>
+          <!-- 动态3 -->
+          <div class="shadow container padding-tb round margin-bottom">
+            <div class="container">
+              <img class="circle left margin-right hover-shadow-small" src="./live_icon.jpg" alt="" width="60" height="60">
+              <span class="right text-grey"> 1min</span>
+              <h3>tikeyc</h3>
+              <br>
+              <hr class="clear">
+              <p>发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，发布的动态，</p>
+              <img class="img hover-shadow-large" src="https://picsum.photos/800/400?image=117" width="800" height="400" alt="photo">
+            </div>
+            <div class="container">
+              <button class="button red"> <i class="fa fa-thumbs-up margin-right"></i>喜欢</button>
+              <button class="button black"> <i class="fa fa-comment margin-right"></i>留言</button>
+            </div>
+          </div>
+          <!--  -->
+          <div class="shadow container padding-tb round margin-bottom">
+          </div>
+        </div>
+
+        <!-- col3 -->
+        <div class="col l2 s12">
+          <div class="shadow container padding-tb round margin-bottom">
+            <div class="container center">
+              <p>要开始的活动</p>
+              <img class="img hover-shadow-large" src="https://picsum.photos/300/200?image=969" width="300" height="200" alt="">
+              <h4>假日狂欢</h4>
+              <p>星期五 16：00</p>
+              <button class="button lightgrey hover-shadow-off hover-lightgray" style="width:100%">详情</button>
+            </div>
+          </div>
+          <!--  -->
+          <div class="shadow container padding-tb round margin-bottom">
+            <div class="container center">
+              <p>好友请求</p>
+              <img class="img hover-shadow-large" src="https://picsum.photos/300/300?image=835" width="80" height="80" alt="">
+              <p class="small wide-small">jack</p>
+              <div class="row">
+                <button class="button left lightgreen hover-shadow-off hover-lightgray" style="width:50%">YES</button>
+                <button class="button left lightred hover-shadow-off hover-lightgray" style="width:50%">NO</button>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="shadow container padding-tb round margin-bottom">
+            <div class="container center">
+              <p>好友请求</p>
+              <img class="img hover-shadow-large" src="https://picsum.photos/300/300?image=839" width="80" height="80" alt="">
+              <p class="small wide-small">jack</p>
+              <div class="row">
+                <button class="button left lightgreen hover-shadow-off hover-lightgray" style="width:50%">YES</button>
+                <button class="button left lightred hover-shadow-off hover-lightgray" style="width:50%">NO</button>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="shadow container padding-tb round margin-bottom">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="black margin-top padding-tb center">
+      <p>Power by <a class="text-lightgray" href="https://www.jianshu.com/u/d4a3d29e49cb">tikeyc</a> </p>
+    </footer>
+
+  </body>
+</html>

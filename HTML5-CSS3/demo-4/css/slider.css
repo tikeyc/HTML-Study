@@ -84,6 +84,7 @@
 }
 
 .animation-bottom {
+  position: relative;
   animation-name: animationBottom;
   animation-duration: 2s;
 }
@@ -91,8 +92,10 @@
 @keyframes animationBottom {
   from {
     opacity: 0.2;
+    bottom: -300px;
   }
   to {
     opacity: 1;
+    bottom: 0;
   }
 }
