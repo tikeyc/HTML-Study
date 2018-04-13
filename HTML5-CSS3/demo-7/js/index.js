@@ -12,7 +12,7 @@ function sendButtonClick() {
   var content1 = document.getElementById("content1");
   //1
   var new_content = document.createElement("div");
-  new_content.className = 'shadow container padding-tb round margin-bottom';
+  new_content.className = 'shadow container padding-tb round margin-bottom animate-top';
   //2
   var container = document.createElement("div");
   container.className = 'container';
@@ -94,3 +94,44 @@ function sendButtonClick() {
   //在form节点后插入新创建的元素节点new_content
   col.insertBefore(new_content,form.nextSibling);
 }
+
+var copyCount = 0;
+function copyMessage() {
+  copyCount++;
+  if (copyCount > 5) {
+    console.log('copyCount:' + copyCount);
+    return;
+  }
+  var col1_div = document.getElementById('col1_div');
+  var tag_div = document.getElementById('tag_div');
+  //
+  var newMessage_div = document.createElement('div');
+  newMessage_div.className = 'shadow relative-contaner lightyellow container padding-tb round margin-bottom animate-left';
+  //
+  var button = document.createElement('button');
+  button.className = 'btn top-right';
+  button.innerHTML = 'x';
+  button.onclick = function () {
+    this.parentNode.style.display = 'none';
+  };
+  newMessage_div.appendChild(button);
+  //
+  var h4 = document.createElement('h4');
+  h4.innerHTML = 'Hey' + copyCount;
+  newMessage_div.appendChild(h4);
+  //
+  var p_content = document.createElement('p');
+  p_content.className = 'small';
+  p_content.innerHTML = '您收到的新消息，您收到的新消息，您收到的新消息:' + copyCount;
+  newMessage_div.appendChild(p_content);
+  //
+  col1_div.insertBefore(newMessage_div, tag_div.nextSibling);
+  //
+  setTimeout(copyMessage,1000*copyCount);
+}
+
+// 延迟2s执行
+setTimeout(sendButtonClick,2000);
+setTimeout(copyMessage,1000);
+// 每秒执行
+// setInterval(sendButtonClick,1000);
