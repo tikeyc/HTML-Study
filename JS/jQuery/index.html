@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <script src="./js/jquery.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js" charset="utf-8"></script>
+    <script src="./js/load.js" charset="utf-8"></script>
+
+    <style media="screen">
+      .animate-div {
+        position: relative;
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+      }
+      .remove-div {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+      }
+      .buttonClass {
+        background-color: lightblue;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p id="p1">$('p').css('background-color','red')</p>
+
+    <button class="button1" type="button" name="button">点击上面文本将隐藏或显示</button>
+
+    <div class="animate-div">
+      <img src="" alt="">
+    </div>
+
+    <button class="append-button" type="button" name="button">操作元素-增加</button>
+    <div class="remove-div">
+      <p>删除元素</p>
+      <img src="../icon.jpg" width="100px" height="80px" alt="">
+    </div>
+    <p class="remove-p1">删除元素1</p>
+    <p class="remove-p2">删除元素2</p>
+    <button class="remove-button" type="button" name="button">操作元素-删除</button>
+
+    <h1>jQuery load()</h1>
+    <div class="load-div">
+    </div>
+    <p id="load-p1"></p>
+
+    <button onclick="jQueryGetRequest();" type="button" name="button">jQueryGetRequest</button>
+    <button onclick="jQueryPostRequest();" type="button" name="button">jQueryPostRequest</button>
+  </body>
+</html>
