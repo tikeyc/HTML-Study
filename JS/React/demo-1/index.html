@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <script src="./js/index.js" charset="utf-8"></script>
+
+    <script src="../commenJS/react.js"></script>
+    <script src="../commenJS/react-dom.js"></script>
+    <script src="../commenJS/browser.min.js"></script>
+    <!-- <script src="../commenJS/babel.js"></script> -->
+    <script src="../commenJS/jquery.js"></script>
+  </head>
+  <body>
+
+    <div id="example"></div>
+    <div id="button"></div>
+    <div id="form"></div>
+    <div id="ajax"></div>
+    <div id="list"></div>
+
+    <script type="text/babel">
+
+      var MyTitle = React.createClass({
+        getDefaultProps : function () {
+          return {
+            title : 'tikeyc'
+          };
+        },
+        render: function () {
+          return <h1>{this.props.title}</h1>;
+        }
+      });
+      ReactDOM.render(
+        <MyTitle title='tikeyc_1'/>,
+        document.getElementById('example')
+      );
+      //
+      var LikeButton = React.createClass({
+
+        getInitialState: function() {
+          return {liked: false};
+        },
+        handleClick: function(event) {
+          this.setState({liked: !this.state.liked});
+        },
+        render: function() {
+          var text = this.state.liked ? 'like' : 'haven\'t liked';
+          return (
+            <p onClick={this.handleClick}>
+              You {text} this. Click to toggle.
+            </p>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <LikeButton />,
+        document.getElementById('button')
+      );
+      //
+      var Input = React.createClass({
+        componentWillMount: function () {
+          //函数在进入状态之前调用
+          console.log('componentWillMount');
+        },
+        componentDidMount: function () {
+          //函数在进入状态之后调用
+          console.log('componentDidMount');
+        },
+        componentWillUpdate: function (nextProps, nextState) {
+          console.log('componentWillUpdate');
+        },
+        componentDidUpdate: function (prevProps, prevState) {
+          console.log('componentDidUpdate');
+        },
+        componentWillUnmount: function () {
+          console.log('componentWillUnmount');
+        },
+        componentWillReceiveProps: function (nextProps) {
+          //已加载组件收到新的参数时调用
+          console.log('componentWillReceiveProps');
+        },
+        shouldComponentUpdate: function (nextProps, nextState) {
+          //组件判断是否重新渲染时调用
+          console.log('shouldComponentUpdate');
+          return true;
+        },
+        getInitialState: function() {
+          return {value: 'Hello!'};
+        },
+        handleChange: function(event) {
+          this.setState({value: event.target.value});
+        },
+        render: function () {
+          var value = this.state.value;
+          return (
+            <div>
+              <input type="text" value={value} onChange={this.handleChange} />
+              <p>{value}</p>
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <Input/>,
+        document.getElementById('form')
+      );
+      /**
+       * [Ajax]
+         组件的数据来源，通常是通过 Ajax 请求从服务器获取，
+         可以使用 componentDidMount 方法设置 Ajax 请求，
+         等到请求成功，再用 this.setState 方法重新渲染 UI
+       */
+      var UserGist = React.createClass({
+        getInitialState: function() {
+          return {
+            username: '',
+            lastGistUrl: ''
+          };
+        },
+
+        componentDidMount: function() {
+          $.get(this.props.source, function(result) {
+            var lastGist = result[0];
+            if (this.isMounted()) {
+              this.setState({
+                username: lastGist.owner.login,
+                lastGistUrl: lastGist.html_url
+              });
+            }
+          }.bind(this));
+        },
+
+        render: function() {
+          return (
+            <div>
+              {this.state.username}s last gist is
+              <a href={this.state.lastGistUrl}> here</a>.
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <UserGist source="https://api.github.com/users/octocat/gists" />,
+        document.getElementById('ajax')
+      );
+      //
+      var RepoList = React.createClass({
+        propTypes: {
+          promise: React.PropTypes.object,
+          // 自定义验证器。如果验证失败需要返回一个 Error 对象。不要直接使用 `console.warn` 或抛异常，因为这样 `oneOfType` 会失效。
+          // customProp: function(props, propName, componentName) {
+          //   if (!/matchme/.test(props[propName])) {
+          //     return new Error('Validation failed!');
+          //   }
+          // }
+        },
+        getDefaultProps: function () {
+          return {
+            promise: $.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')
+          };
+        },
+        getInitialState: function() {
+          return {
+            loading: true,
+            error: null,
+            data: null
+          };
+        },
+
+        componentDidMount() {
+          this.props.promise.then(
+            value => this.setState({loading: false, data: value}),
+            error => this.setState({loading: false, error: error}));
+        },
+
+        render: function() {
+          if (this.state.loading) {
+            return <span>Loading...</span>;
+          }
+          else if (this.state.error !== null) {
+            return <span>Error: {this.state.error.message}</span>;
+          }
+          else {
+            var repos = this.state.data.items;
+            var repoList = repos.map(function (repo, index) {
+              return (
+                <li key={index}><a href={repo.html_url}>{repo.name}</a> ({repo.stargazers_count} stars) <br/> {repo.description}</li>
+              );
+            });
+            return (
+              <main>
+                <h1>Most Popular JavaScript Projects in Github</h1>
+                <ol>{repoList}</ol>
+              </main>
+            );
+          }
+        }
+      });
+
+      ReactDOM.render(
+        <RepoList  />,
+        document.getElementById('list')
+      );
+    </script>
+
+  </body>
+</html>

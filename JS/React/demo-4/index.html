@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+
+    <script src="../commenJS/react.js"></script>
+    <script src="../commenJS/react-dom.js"></script>
+    <!-- <script src="../commenJS/browser.min.js"></script> -->
+    <script src="../commenJS/babel.js"></script>
+    <script src="../commenJS/jquery.js"></script>
+
+    <style media="screen">
+      img {
+        margin: 10px 10px;
+        box-shadow: 4px 10px 10px lightgray, -10px -4px 10px lightgray;
+      }
+      #table{
+        padding: 10px;
+        margin: 30px;
+        border: 1px solid red;
+        width: 500px;
+        height: auto;
+      }
+      #table th {
+        text-align: left;
+      }
+      .isStocked {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="list">
+
+    </div>
+    <h2>Image:</h2>
+    <img src="https://doc.react-china.org/static/thinking-in-react-mock-1071fbcc9eed01fddc115b41e193ec11-4dd91.png" alt="">
+    <h2>Demo:</h2>
+    <div id="table"></div>
+
+    <script type="text/babel">
+
+      function Repeat(props) {
+        let items = [];
+        for (let i = 0; i < props.numTimes; i++) {
+          items.push(props.children(i));
+        }
+        return <div>{items}</div>;
+      }
+
+      function ListOfTenThings() {
+        return (
+          <Repeat numTimes={10}>
+            {(index) => <div key={index}>This is item {index} in the list</div>}
+          </Repeat>
+        );
+      }
+      ReactDOM.render(
+        <ListOfTenThings />,
+        document.getElementById('list')
+      );
+
+      const datas = [
+        {category: "Sporting Goods", price: "$49.99",  stocked: true,  name: "Football"},
+        {category: "Sporting Goods", price: "$9.99",   stocked: true,  name: "Baseball"},
+        {category: "Sporting Goods", price: "$29.99",  stocked: false, name: "Basketball"},
+        {category: "Electronics",    price: "$99.99",  stocked: true,  name: "iPod Touch"},
+        {category: "Electronics",    price: "$399.99", stocked: false, name: "iPhone 5"},
+        {category: "Electronics",    price: "$199.99", stocked: true,  name: "Nexus 7"}
+      ];
+
+      class FilterableProductTable extends React.Component {
+
+        constructor(props) {
+          super(props);
+          this.state = {
+            datas: this.props.datas
+          };
+        }
+
+        searchInputChange = (searchValue) => {
+          console.log('FilterableProductTable searchValue',searchValue.toLowerCase());
+          var stockedDatas = null;
+          if (searchValue !== '') {
+            stockedDatas = this.props.datas.filter(function (data) {
+              return (data.name.toLowerCase().indexOf(searchValue) >= 0) || data.category.toLowerCase().indexOf(searchValue) >= 0;
+            });
+          } else {
+            stockedDatas = this.props.datas;
+          }
+          this.setState({
+            datas: stockedDatas
+          });
+        }
+
+        checkboxClick = (checked) => {
+          console.log('FilterableProductTable checked',checked);
+          var stockedDatas = null;
+          if (checked) {
+            stockedDatas = this.props.datas.filter(function (data) {
+              return data.stocked;
+            });
+          } else {
+            stockedDatas = this.props.datas;
+          }
+          this.setState({
+            datas: stockedDatas
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <SearchBar searchInputChange={this.searchInputChange} checkboxClick={this.checkboxClick}/>
+              <ProductTable datas={this.state.datas}/>
+            </div>
+          );
+        }
+      }
+
+      class SearchBar extends React.Component {
+
+        constructor(props) {
+          super(props);
+        }
+
+        searchInputChange = (event) => {
+          console.log('SearchBar input:',event.target.value);
+          this.props.searchInputChange(event.target.value);
+        }
+
+        checkboxClick = (event) => {
+          console.log('SearchBar checked:',event.target.checked);
+          this.props.checkboxClick(event.target.checked);
+        }
+
+        render() {
+          return (
+            <div>
+              <input type="text" placeholder='Search...' onChange={this.searchInputChange}/>
+              <br/>
+              <input type="checkbox" onChange={this.checkboxClick}/> Only show products in stock
+            </div>
+          );
+        }
+      }
+
+      class ProductTable extends React.Component {
+
+        constructor(props) {
+          super(props);
+        }
+
+        render() {
+          var listItems = [];
+          var lastCategray = null;
+          //方式一
+          // this.props.datas.map((data) => {
+          //   //Keys可以在DOM中的某些元素被增加或删除的时候帮助React识别哪些元素发生了变化。
+          //   //因此你应当给数组中的每一个元素赋予一个确定的标识
+          //   //当你在map()方法的内部调用元素时，你最好随时记得为每一个元素加上一个独一无二的key
+          //   if (data.category != lastCategray) {
+          //     listItems.push(<ProductCategoryRow key={data.category} category={data.category}/>);
+          //   }
+          //   listItems.push(<ProductRow key={data.name} isStocked={data.stocked ? '' : 'isStocked'} name={data.name} price={data.price}/>);
+          //   lastCategray = data.category;
+          // });
+          //方式二
+          this.props.datas.forEach(function (data) {
+            // Keys可以在DOM中的某些元素被增加或删除的时候帮助React识别哪些元素发生了变化。
+            // 因此你应当给数组中的每一个元素赋予一个确定的标识
+            // 当你在map()方法的内部调用元素时，你最好随时记得为每一个元素加上一个独一无二的key
+            if (data.category != lastCategray) {
+              listItems.push(<ProductCategoryRow key={data.category} category={data.category}/>);
+            }
+            listItems.push(<ProductRow key={data.name} isStocked={data.stocked ? '' : 'isStocked'} name={data.name} price={data.price}/>);
+            lastCategray = data.category;
+          })
+          return (
+            <table>
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
+              </thead>
+              <tbody>
+                {listItems}
+              </tbody>
+            </table>
+          );
+        }
+      }
+
+      class ProductCategoryRow extends React.Component {
+
+        constructor(props) {
+          super(props);
+        }
+        render() {
+          return (
+            <tr>
+              <th colspan="2">{this.props.category}</th>
+            </tr>
+          );
+        }
+      }
+
+      class ProductRow extends React.Component {
+
+        constructor(props) {
+          super(props);
+        }
+
+        render() {
+          return (
+            <tr>
+              <td className={this.props.isStocked}>{this.props.name}</td>
+              <td>{this.props.price}</td>
+            </tr>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <FilterableProductTable datas={datas}/>,
+        document.getElementById('table')
+      );
+
+    </script>
+
+  </body>
+</html>

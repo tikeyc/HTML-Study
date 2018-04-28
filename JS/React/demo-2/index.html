@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tikeyc</title>
+    <!-- IE setter -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icon.jpg">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+
+    <script src="../commenJS/react.js"></script>
+    <script src="../commenJS/react-dom.js"></script>
+    <!-- <script src="../commenJS/browser.min.js"></script> -->
+    <script src="../commenJS/babel.js"></script>
+    <script src="../commenJS/jquery.js"></script>
+
+    <style media="screen">
+      #root, #toogle, #user {
+        margin: 30px;
+        border: 1px solid red;
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="root"></div>
+    <div id="toogle"></div>
+    <div id="user"></div>
+
+    <script type="text/babel">
+      ////////////////////Clock////////////////////
+      class Clock extends React.Component {
+        //构造函数是唯一能够初始化 this.state 的地方
+        constructor(props) {
+          super(props);
+          this.state = {date: new Date()};
+        }
+        //组件的 render 方法返回 null 并不会影响该组件生命周期方法的回调。
+        //例如，componentWillUpdate 和 componentDidUpdate 依然可以被调用
+        //组件第一次加载到DOM中的时候
+        componentDidMount() {
+          //开启定时器
+          this.timerID = setInterval(
+            () => this.tick(),
+            1000
+          );
+        }
+        //DOM被移除的时候
+        componentWillUnmount() {
+          //卸载定时器
+          clearInterval(this.timerID);
+        }
+
+        tick() {
+          //当使用 setState():方法修改state值
+          this.setState({
+            date: new Date()
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>Hello, world!</h1>
+              <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <Clock />,
+        document.getElementById('root')
+      );
+      ////////////////////ToogleButton////////////////////
+      class ToogleButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {isToogle:true};
+          //方式一
+          // This binding is necessary to make `this` work in the callback
+          // 你必须谨慎对待 JSX 回调函数中的 this，类的方法默认是不会绑定 this 的。
+          // 如果你忘记绑定 this.handleClick 并把它传入 onClick,
+          // 当你调用这个函数的时候 this 的值会是 undefined
+          // this.toogleButtonClick = this.toogleButtonClick.bind(this);
+        }
+        //方式一(打开constructor()中的this.toogleButtonClick = this.toogleButtonClick.bind(this);)
+        // toogleButtonClick() {
+        //   console.log('toogleButtonClick');
+        //   // this.setState(prevState => ({
+        //   //   isToogle: !prevState.isToogle
+        //   // }));
+        //   // 或者这样设置
+        //   this.setState(function (prevState) {
+        //     return {isToogle: !prevState.isToogle};
+        //   });
+        // }
+        //或者这样设置(注释constructor()中的this.toogleButtonClick = this.toogleButtonClick.bind(this);)
+        // 方式二
+        toogleButtonClick = () => {
+          console.log('toogleButtonClick');
+          // this.setState(prevState => ({
+          //   isToogle: !prevState.isToogle
+          // }));
+          // 或者这样设置
+          this.setState(function (prevState) {
+            return {isToogle: !prevState.isToogle};
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <button onClick={this.toogleButtonClick}>ToogleButton:{this.state.isToogle ? 'NO' : 'OFF'}</button>
+              <Clock />
+            </div>
+          );
+        }
+      }
+      ReactDOM.render (
+        <ToogleButton />,
+        document.getElementById('toogle')
+      );
+      ////////////////////User Login Logout////////////////////
+
+      function UserGreeting(props) {
+        return <h1>Welcome back!</h1>
+      }
+      function GuestGreeting(props) {
+        return <h1>Please sign up!</h1>
+      }
+
+      function Greeting(props) {
+        const isLogin = props.isLogin;
+        if (isLogin) {
+          return <UserGreeting />;
+        } else {
+          return <GuestGreeting />;
+        }
+      }
+
+      function LoginButton(props) {
+        return <button onClick={props.onClick}>Login</button>;
+      }
+
+      function LogoutButton(props) {
+        return <button onClick={props.onClick}>Logout</button>;
+      }
+
+      class LoginControl extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {isLogin: false};
+        }
+
+        loginClick = () => {
+          console.log('loginClick');
+          // this.setState({isLogin: true});
+          // 或者这样实现
+          this.setState(function (prevState) {
+            return {isLogin: !prevState.isLogin};
+          })
+        }
+
+        logoutClick = () => {
+          console.log('logoutClick');
+          // this.setState({isLogin: false});
+          // 或者这样实现
+          this.setState(prevState => (
+            {isLogin: !prevState.isLogin}
+          ));
+        }
+
+        render() {
+          const isLogin = this.state.isLogin;
+          let button = null;
+          if (isLogin) {
+            button = <LogoutButton onClick={this.logoutClick}/>;
+          } else {
+            button = <LoginButton onClick={this.loginClick}/>;
+          }
+          // <!-- JavaScript 的逻辑与 &&，它可以方便地条件渲染一个元素 -->
+          return (
+            <div>
+              <Greeting isLogin={isLogin}/>
+              {button}
+              {isLogin &&
+                <h2>
+                  You have 3 unread messages.
+                </h2>
+              }
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <LoginControl />,
+        document.getElementById('user')
+      );
+
+    </script>
+
+  </body>
+</html>
