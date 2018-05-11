@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../index.css'
+import '../../css/index.css';
 import TestImg from '../context/test';
 
 class Cat extends React.Component {
-  
+
   render() {
     const mouse = this.props.mouse;
     return (

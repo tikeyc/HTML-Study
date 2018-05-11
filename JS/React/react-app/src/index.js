@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/index.css';
 
-import {ThemeContext, BorderContext, themes} from './context/theme-context';
-import ThemeTogglerButton from './context/theme-toggler-button';
-import TestImg from './context/test';
-import {MouseTracker, withMouse} from './render-props/render-props';
-import MyAjaxComponent from './ajax/ajax';
+import {ThemeContext, BorderContext, themes} from './components/context/theme-context';
+import ThemeTogglerButton from './components/context/theme-toggler-button';
+import TestImg from './components/context/test';
+import {MouseTracker, withMouse} from './components/render-props/render-props';
+import MyAjaxComponent from './components/ajax/ajax';
 
 class App extends React.Component {
   constructor(props) {
