@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import $ from 'jquery';
 
 class MyAjaxComponent extends React.Component {
   constructor(props) {
@@ -13,6 +13,16 @@ class MyAjaxComponent extends React.Component {
   }
 
   componentDidMount() {
+    // this.fetchLoadPicData();
+    this.jqueryLoadPicData();
+  }
+
+  componentWillUnmount() {
+    //取消网络请求
+  }
+
+  //
+  fetchLoadPicData() {
     fetch("http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1")
       .then(res => res.json())
       .then(
@@ -35,8 +45,28 @@ class MyAjaxComponent extends React.Component {
       )
   }
 
-  componentWillUnmount() {
-    //取消网络请求
+  //
+  jqueryLoadPicData(){
+    const thisCurrentComponent = this;
+    $.ajax({
+      type:"get",
+      url:"http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1",
+      dataType:"json",
+      data:{},
+      success: function (result) {
+        console.log('result', result.results);
+        thisCurrentComponent.setState({
+          isLoaded: true,
+          items: result.results
+        });
+      },
+      error: function (error) {
+        thisCurrentComponent.setState({
+          isLoaded: true,
+          error: error
+        });
+      }
+    });
   }
 
   handleScroll = (e) => {

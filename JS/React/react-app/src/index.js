@@ -6,9 +6,12 @@ import {ThemeContext, BorderContext, themes} from './components/context/theme-co
 import ThemeTogglerButton from './components/context/theme-toggler-button';
 import TestImg from './components/context/test';
 import {MouseTracker, withMouse} from './components/render-props/render-props';
+// eslint-disable-next-line
 import MyAjaxComponent from './components/ajax/ajax';
 
 class App extends React.Component {
+  /////////////////挂载阶段/////////////////
+  //构造函数
   constructor(props) {
     super(props);
 
@@ -19,33 +22,39 @@ class App extends React.Component {
       imgsrc: 'https://unsplash.it/200/200?image=1021',
     };
   }
+  //将要被挂载
+  componentWillMount() {
 
+  }
+  //完成挂载
   componentDidMount() {
     //网络请求
-    fetch("https://api.example.com/items")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.items
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
   }
+
+  /////////////////更新阶段/////////////////
+  //作为子空间，在props改变时调用
+  componentWillReceiveProps(nextProps) {
+
+  }
+  //是否允许更新，返回boolean
+  shouldComponentUpdate(nextProps,nextState) {
+    return true;
+  }
+  //将要更新
+  componentWillUpdate(nextProps,nextState) {
+
+  }
+  //完成更新
+  componentDidUpdate(prevProps,prevState) {
+
+  }
+
+  /////////////////销毁阶段/////////////////
   componentWillUnmount() {
     //取消网络请求
   }
 
+  //挂载出错
   componentDidCatch(error, info) {
     // Display fallback UI
     this.setState({ hasError: true });
@@ -54,6 +63,7 @@ class App extends React.Component {
     console.log(error);
   }
 
+  /////////////////自定义方法/////////////////
   toggleTheme = () => {
     this.setState(state => ({
       theme: state.theme === themes.dark ? themes.light : themes.dark,
@@ -61,6 +71,7 @@ class App extends React.Component {
     }));
   };
 
+  //渲染
   render() {
     const borderClassName = {
       className: 'button_border'
