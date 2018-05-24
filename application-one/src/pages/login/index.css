@@ -1,0 +1,53 @@
+.login-contanier {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 242, 242);
+}
+.login-div {
+  margin-top: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.login-div img {
+  width: 125px;
+  height: 72px;
+}
+
+.login-form {
+  padding: 40px;
+  /* margin-top: 40px; */
+  vertical-align: middle;
+  text-align: center;
+}
+
+.login-form > div {
+  margin: 20px 0px;
+}
+
+.login-form > div:last-child {
+  margin-top: 100px;
+}
+
+.form-label {
+  margin-right: 10px;
+}
+
+.form-imput {
+  display: inline;
+  width: 80%;
+  height: 30px;
+  border: 1px solid lightGray;
+  border-radius: 5px;
+}
+
+
+.form-button {
+  width: 100%;
+  height: 44px;
+  color: white;
+  background-color: red;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}

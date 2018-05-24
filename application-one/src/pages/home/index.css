@@ -1,0 +1,56 @@
+.home-contanier {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(246, 242, 242);
+}
+
+.footer-imageSwiper {
+  border: 1px solid red;
+  width: 80%;
+  height: 150px;
+  /* position: fixed;
+  bottom: 0; */
+}
+
+.home-carousel-item-div {
+  width: 100%;
+  height: 150px;
+}
+
+.home-carousel-item-div > img {
+  width: 100%;
+  height: 100%;
+}
+
+.imageSwiper-contanier {
+  position: fixed;
+  border: 1px solid red;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+.imageSwiper-contanier::after {
+  clear: both;
+  display: grid;
+  content: "";
+}
+.imageSwiper-contanier::before {
+  clear: both;
+  display: grid;
+  content: "";
+}
+.imageSwiper-contanier > * {
+  float: left;
+}
+
+.imageSwiper-button {
+  width: 10%;
+  line-height: 150px;
+}
+
+.imageSwiper-button > img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}

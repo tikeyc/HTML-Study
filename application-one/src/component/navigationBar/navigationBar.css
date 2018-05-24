@@ -1,0 +1,89 @@
+.navigationBar {
+  background-color: red;
+  height: 64px;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+
+.navigationBar::after {
+  display: grid;
+  clear: both;
+  content: '';
+}
+.navigationBar::before {
+  display: grid;
+  clear: both;
+  content: '';
+}
+
+.navigationBar > div:nth-child(2n+1) {
+  position: absolute;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+}
+
+.navigationBar > div:nth-child(2n) {
+  display: inline-block;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  /* background-color: gray; */
+  text-align: center;
+  padding-top: 20px;
+  line-height: 44px;
+  color: white;
+  font-size: 18px;
+  left: 10%;
+}
+
+.navigationBar > div:nth-child(3) {
+  position: absolute;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  right: 0px;
+}
+
+.leftImg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  bottom: 7px;
+}
+
+.leftText {
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  left: 40px;
+  top: 20px;
+  width: auto;
+}
+
+.rightImg {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  bottom: 7px;
+}
+
+.rightText {
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  right: 40px;
+  top: 20px;
+  width: auto;
+}
+
+.title {
+  width: 100%;
+  /* background-color: black; */
+  color: white;
+  text-align: center;
+  line-height: 64px;
+}
