@@ -10,6 +10,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import PageA from './pages/buick';
 
 class App extends React.Component {
   constructor() {
@@ -50,7 +51,8 @@ class App extends React.Component {
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    {/* <App /> */}
+    <PageA />
   </BrowserRouter>,
   document.getElementById('root')
 );
