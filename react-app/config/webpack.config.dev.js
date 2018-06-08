@@ -84,7 +84,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -115,7 +115,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -144,11 +144,17 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
+              plugins: [
+                    // 引入样式为 css
+                    ['import', { libraryName: 'antd-mobile', style: 'css' }],
+                    // 改动: 引入样式为 less
+                    //  ['import', { libraryName: 'antd-mobile', style: true }],
+                ]
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
@@ -156,6 +162,18 @@ module.exports = {
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
+          {
+            test: /\.less$/,
+            use: [
+                require.resolve('style-loader'),
+                {
+                  loader: require.resolve('css-loader')
+                },
+                {
+                  loader: require.resolve('less-loader'), // compiles Less to CSS
+                },
+            ],
+          },
           {
             test: /\.css$/,
             use: [
@@ -185,6 +203,9 @@ module.exports = {
                     }),
                   ],
                 },
+              },
+              {
+                loader: require.resolve('less-loader'), // compiles Less to CSS
               },
             ],
           },
