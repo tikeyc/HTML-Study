@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import $ from 'jquery';
 import './index.css';
-import NavigationBar from '../../component/navigationBar/navigationBar';
+import NavigationBar from '../../components/navigationBar/navigationBar';
 import logo from '../../images/logo.png'
 import {loginUrl} from '../../common/api/api'
 import HomePage from '../home';

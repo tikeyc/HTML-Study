@@ -1,17 +1,15 @@
 import React from 'react';
-import NavigationBar from '../../component/navigationBar/navigationBar';
+import NavigationBar from '../../components/navigationBar/navigationBar';
 import gerenshezhi from '../../images/gerenshezhi.png'
 import quyuanniu from '../../images/quyuanniu.png'
 import './index.css';
-import { Carousel, Calendar} from 'antd';
-
-const imageList = [require('../../images/ic_launcher.png'),require('../../images/ic_launcher.png'),
-require('../../images/ic_launcher.png'),require('../../images/ic_launcher.png'),require('../../images/ic_launcher.png')];
+import { Carousel} from 'antd';
 
 export default class HomePage extends React.Component {
 
   userSettingClick = () => {
     console.log('userSettingClick');
+    this.props.history.push({pathname:'/pageA'});
   }
 
   regionClick = () => {
@@ -54,7 +52,7 @@ class ImageSwiper extends React.Component {
   render() {
     return(
       <div className='imageSwiper-contanier'>
-        <div className='imageSwiper-button' onClick={this.switchLeftOnClick}><img src={require('../../images/zuoyi.png')}/></div>
+        <div className='imageSwiper-button' onClick={this.switchLeftOnClick}><img src={require('../../images/zuoyi.png')} alt=''/></div>
         <footer className='footer-imageSwiper'>
           <Carousel
             afterChange={this.onChange}
@@ -70,7 +68,7 @@ class ImageSwiper extends React.Component {
             }
           </Carousel>
         </footer>
-        <div className='imageSwiper-button' onClick={this.switchRightOnClick}><img src={require('../../images/youyi.png')}/></div>
+        <div className='imageSwiper-button' onClick={this.switchRightOnClick}><img src={require('../../images/youyi.png')} alt=''/></div>
       </div>
     )
   }
