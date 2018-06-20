@@ -13,7 +13,7 @@ export default class PageA extends Component {
 
   handleBack = () => {
     // this.props.onChangePage(0);
-  }
+   }
 
   handleNext = () => {
     // this.props.onChangePage(2);

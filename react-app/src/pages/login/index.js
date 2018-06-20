@@ -1,14 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
 import $ from 'jquery';
 import './index.css';
 import NavigationBar from '../../components/navigationBar/navigationBar';
 import logo from '../../images/logo.png'
 import {loginUrl} from '../../common/api/api'
-import HomePage from '../home';
-import { Router, NavLink } from 'react-router-dom';
-import BasicExample from '../test/test'
 
 // LoginPage.contextTypes = {
 //   router: React.PropTypes
