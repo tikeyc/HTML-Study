@@ -55,7 +55,7 @@ function sendButtonClick() {
   row_padding.className = 'row-padding';
   new_content.appendChild(row_padding);
 
-  var img_array = new Array('http://7xi8d6.com1.z0.glb.clouddn.com/20180129074038_O3ydq4_Screenshot.jpeg','http://7xi8d6.com1.z0.glb.clouddn.com/20171228085004_5yEHju_Screenshot.jpeg');
+  var img_array = ['http://7xi8d6.com1.z0.glb.clouddn.com/20180129074038_O3ydq4_Screenshot.jpeg','http://7xi8d6.com1.z0.glb.clouddn.com/20171228085004_5yEHju_Screenshot.jpeg'];
   for (var i = 0; i < img_array.length; i++) {
     var row_col = document.createElement("div");
     row_col.className = 'col l6 s12 margin-bottom';
@@ -74,21 +74,27 @@ function sendButtonClick() {
   //9-1
   var button1 = document.createElement("button");
   button1.className = 'button red';
-  button1.innerHTML = '喜欢';
+  // button1.innerHTML = '喜欢';
   container2.appendChild(button1);
   //9-1-1
   var i_up = document.createElement("i");
   i_up.className = 'fa fa-thumbs-up margin-right';
   button1.appendChild(i_up);
+  var test = document.createElement("span");
+  test.innerHTML = '喜欢';
+  button1.appendChild(test);
   //9-2
   var button2 = document.createElement("button");
   button2.className = 'button black';
-  button2.innerHTML = '喜欢';
+  // button2.innerHTML = '留言';
   container2.appendChild(button2);
   //9-2-1
   var i_comment = document.createElement("i");
   i_comment.className = 'fa fa-comment margin-right';
   button2.appendChild(i_comment);
+  var test2 = document.createElement("span");
+  test2.innerHTML = '留言';
+  button2.appendChild(test2);
   //在content1节点前插入新创建的元素节点new_content
   // col.insertBefore(new_content,content1);
   //在form节点后插入新创建的元素节点new_content
